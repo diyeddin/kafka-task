@@ -2,10 +2,12 @@
 ```bash
 sudo docker compose -f docker_compose.yaml up -d
 ```
-After starting the docker container, producer.py will scrape the first page from [This Website](https://scrapeme.live/shop/) and send it to the kafka topic that was created.
-Then the consumer.py script will run and receieve the data and save it in a json file located in a shared volume between its container and the API container.
-Then the api container will run making the data accessible at http://localhost:8501/data.
+After starting the docker container, kafka and zookeeper will be configured and a new topic called my-topic will be created automatically.
+After that the producer container will run and scrape the first page from [This Website](https://scrapeme.live/shop/) and send it to the kafka topic that was created.
+Then the consumer container will run and receieve the data and save it in a json file located in a shared volume between its container and the API container.
+Lastly the api container will run making the data accessible at http://localhost:8501/data.
 
+![Example Data](res/data.png)
 
 ### To enter the Kafka container run the following command:
 ```bash
