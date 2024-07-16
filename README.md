@@ -1,6 +1,6 @@
 ### To start the docker container run the following command:
 ```bash
-sudo docker compose -f docker_compose.yaml up -d
+sudo docker compose -f docker-compose.yaml up -d
 ```
 After starting the docker container, kafka and zookeeper will be configured and a new topic called my-topic will be created automatically.
 
